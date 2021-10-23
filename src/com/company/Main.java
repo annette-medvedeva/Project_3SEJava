@@ -7,17 +7,17 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        //Ex_1();
+        // Ex_1();
         //Ex_2();
         // Ex_3();
         //Ex_4();
         //Ex_5();
-        // Ex_6();
-        //Ex_7();
+        //Ex_6();
+        Ex_7();
         // task1();
         //Ex_8();
         // Ex_9();
-        Ex_10();
+       // Ex_10();
         //Ex_11();
     }
 
@@ -101,7 +101,7 @@ public class Main {
         double b = 7;
         double h = 0.75, x;
         double res_1, res_2, res_3;
-        for (x = a; a <= b; x += h) {
+        for (x = a; x <= b; x += h) {
             if (Math.sin(x) != 0) {
                 res_1 = x - Math.sin(x);
                 System.out.println("\nx = " + x + " , y = " + String.format("%.2f", res_1));
@@ -123,7 +123,7 @@ public class Main {
         System.out.println("\nTask 2: " + System.lineSeparator());
         int a = 3;
         int b = -5;
-        int x;
+        double x;
         double h = 0.5, y;
         System.out.println("Enter x (from 1 to 5): ");
         x = scanner.nextInt();
@@ -193,7 +193,7 @@ public class Main {
 
     //Найти 20 первых натуральных чисел, делящихся нацело на 13 или на 17 и больших 500.
     private static void Ex_10() {
-        int i=0, n;
+        int i = 0, n;
         while (i < 20) {
             System.out.println("натуральные числа, делящихся нацело на 13 или на 17 и больших 500 : ");
             for (n = 0; n <= 500; n++) {
@@ -204,7 +204,23 @@ public class Main {
             }
         }
     }
+//Вычислить значение функции
+    public static void Ex_11() {
+        double x = 0, numerator = 0, denominator = 1, z = 0;
+        final int N = 10; //[0..10]
+        for (int i = 1; i < 20; i++) {
+            denominator = 1;
+            for (int k = 1; k < N; k++) {
+                x = Math.random() * 10;
+                numerator = Math.pow(x, k);
+                denominator = denominator * k;
+                z += numerator / denominator;
+            }
+            System.out.println(z);
+        }
+    }
 }
+
 
 
 
